@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="hidebignav">
+    <div class="bignav">
+        <img src="https://www.masaischool.com/img/navbar/logo.svg"/>
+        <h3>COURSES</h3>
+        <h3>FEES & ISA</h3>
+        <h3>ABOUT US</h3>
+        <h3>HIRE FROM US</h3>
+        <h3>FAQ</h3>
+        <h3>EVENTS</h3>
+    </div>
+    </div>
+
+    <div class="hidesmallnav">
+    <div class="smallnav">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">&#8801</button>
+            <img src="https://www.masaischool.com/img/navbar/logo.svg"/>
+            
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#home">COURSES</a>
+              <a href="#about">FEES & ISA</a>
+              <a href="#contact">ABOUT US</a>
+              <a href="#">HIRE FROM US</a>
+              <a href="#">FAQ</a>
+              <a href="#">EVENTS</a>
+            </div>
+          </div>
+    </div>
+    </div>
+</body>
+</html>
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+</script>
